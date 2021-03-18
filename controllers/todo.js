@@ -3,10 +3,10 @@ import todoPost from '../models/todo_post.js';
 export const getTodos = async (req, res) => {
   try {
     const todolist = await todoPost.find(
-    //   {
-    //   date: req.params.todoDate,
-    //   User: req.data_user._id
-    // }
+      {
+      date: req.params.todoDate,
+      User: req.data_user._id
+    }
     );
     res.ok({
       status_code: 200,
@@ -14,6 +14,41 @@ export const getTodos = async (req, res) => {
       data: todolist
     });
     console.log(todolist, "todolist")
+  } catch (err) {
+    console.log(err)
+    res.error({
+      message: err
+    });
+  }
+}
+
+export const getAllData = async (req, res) => {
+  try {
+    const todoall = await todoPost.find({});
+    res.ok({
+      status_code: 200,
+      message: "sucsess get data",
+      data: todoall
+    });
+    console.log(todoall, "todolist")
+  } catch (err) {
+    console.log(err)
+    res.error({
+      message: err
+    });
+  }
+}
+
+
+export const getTodosNotAuth = async (req, res) => {
+  try {
+    const todoall = await todoPost.find({});
+    res.ok({
+      status_code: 200,
+      message: "sucsess get data",
+      data: todoall
+    });
+    console.log(todoall, "todolist")
   } catch (err) {
     console.log(err)
     res.error({
