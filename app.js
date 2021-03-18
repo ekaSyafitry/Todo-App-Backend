@@ -31,4 +31,4 @@ if (process.env.NODE_ENV === 'production') {
     console.log = function () {};
 }
 
-app.listen(3030);
+app.listen(process.env.PORT || 8080);
