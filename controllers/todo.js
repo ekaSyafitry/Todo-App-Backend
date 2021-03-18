@@ -1,4 +1,4 @@
-import todoPost from '../models/todo_post';
+import todoPost from '../models/todo_post.js';
 
 export const getTodos = async (req, res) => {
   try {

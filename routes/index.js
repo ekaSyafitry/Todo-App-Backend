@@ -1,6 +1,6 @@
 
-import todo from './todo'
-import user from './user'
+import todo from './todo.js'
+import user from './user.js'
 
 export default (app) => {
     app.use('/todo', todo);

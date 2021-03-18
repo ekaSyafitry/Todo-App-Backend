@@ -1,15 +1,17 @@
-const mongoose = require('mongoose');
-const express = require('express');
+import mongoose from 'mongoose'
+import express from 'express'
 const app = express();
-const bodyParser = require('body-parser');
-var cors = require('cors');
+
+import bodyParser from 'body-parser'
+import cors from 'cors'
 import respond from 'express-respond'
 
 //import routes
-import route from './routes/index'
+import route from './routes/index.js'
 
 //Midleware
-require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
 app.use(bodyParser.json());
 app.use(respond);
 app.use(cors());

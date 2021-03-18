@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken' 
-import userModel from '../models/user'
+import userModel from '../models/user.js'
 const privateKey = `${process.env.SECRETKEY}`
 
 export const validateAuth = async (req, res, next) => {

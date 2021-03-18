@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express'
 const router = express.Router();
-import {getUser, login, postUser} from '../controllers/user'
-import { validateAuth } from '../midleware/auth';
+import {getUser, login, postUser} from '../controllers/user.js'
+import { validateAuth } from '../midleware/auth.js';
 
 
 router.post('/register', postUser)

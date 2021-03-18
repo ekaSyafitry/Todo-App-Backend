@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
 var Schema   = mongoose.Schema;
 
 const postSchema = new Schema({
@@ -25,4 +25,4 @@ const postSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('TodoList', postSchema);
+export default mongoose.model('TodoList', postSchema);

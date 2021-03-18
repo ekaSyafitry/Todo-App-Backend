@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express'
 const router = express.Router();
 
-import {getTodos, postTodos, deleteTodo, updateTodo, updateTodoComplete} from '../controllers/todo'
-import { validateAuth } from '../midleware/auth';
+import {getTodos, postTodos, deleteTodo, updateTodo, updateTodoComplete} from '../controllers/todo.js'
+import { validateAuth } from '../midleware/auth.js';
 
 	router.post('/post', validateAuth, postTodos)
 		

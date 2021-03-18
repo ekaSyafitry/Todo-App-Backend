@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon app.js --exec babel-node --presets babel-preset-env",
-    "start": "NODE_ENV=production nodemon app.js --exec babel-node --presets babel-preset-env"
+    "start": "NODE_ENV=production node app.js --exec babel-node --presets babel-preset-env"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
