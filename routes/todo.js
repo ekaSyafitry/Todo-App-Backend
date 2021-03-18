@@ -4,7 +4,7 @@ const router = express.Router();
 import {getTodos, postTodos, deleteTodo, updateTodo, updateTodoComplete, getAllData, getTodosNotAuth} from '../controllers/todo.js'
 import { validateAuth } from '../midleware/auth.js';
 	
-	router.get('/alldata', getAllData)
+	router.get('/alldata/:todoDate', getAllData)
 
 	router.get('/withoutAuth', validateAuth, getTodosNotAuth)
 

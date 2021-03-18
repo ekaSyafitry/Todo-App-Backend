@@ -1,6 +1,8 @@
 import todoPost from '../models/todo_post.js';
 
 export const getTodos = async (req, res) => {
+  console.log(req.params.todoDate, "req.params.todoDate")
+  console.log(req.data_user._id, "req.data_user._id")
   try {
     const todolist = await todoPost.find(
       {
@@ -24,7 +26,9 @@ export const getTodos = async (req, res) => {
 
 export const getAllData = async (req, res) => {
   try {
-    const todoall = await todoPost.find({});
+    const todoall = await todoPost.find({
+      date: req.params.todoDate
+    });
     res.ok({
       status_code: 200,
       message: "sucsess get data",
