@@ -5,8 +5,8 @@ import {getTodos, postTodos, deleteTodo, updateTodo, updateTodoComplete} from '.
 import { validateAuth } from '../midleware/auth.js';
 
 	router.post('/post', validateAuth, postTodos)
-		
-	router.get('/:todoDate', validateAuth, getTodos)
+	//getTodo	
+	router.get('/:todoDate', getTodos)
 
 	router.delete('/delete/:todoId',validateAuth, deleteTodo)
 
