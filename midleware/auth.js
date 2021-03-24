@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken' 
 import userModel from '../models/user.js'
+import Joi from 'joi'
 const privateKey = `${process.env.SECRETKEY}`
 
 export const validateAuth = async (req, res, next) => {
@@ -30,3 +31,18 @@ export const decode = (auth) => {
        return false
     }
 }
+
+
+export const validatePayload = (validator) => { 
+    return (req, res, next) => { 
+        console.log(req.body, 'req.bodyyyyy')
+        const { error } = validator.validate(req.body)
+        console.log('error: ', error)
+        if (error) {
+          return res.badRequest({
+              message: error.details[0].message
+          })
+        }
+        next()
+    } 
+  } 

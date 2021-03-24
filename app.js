@@ -27,8 +27,8 @@ mongoose.connect(`${connectUrl}`,{
     useUnifiedTopology: true
 }, () => console.log('connect to DB !!!'))
 
-if (process.env.NODE_ENV === 'production') {
-    console.log = function () {};
-}
-
-app.listen(process.env.PORT || 8080);
+// if (process.env.NODE_ENV === 'production') {
+//     console.log = function () {};
+// }
+const port = process.env.PORT || 8080;
+app.listen(port, ()=> console.log(`weeeey ${port}`));

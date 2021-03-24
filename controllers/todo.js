@@ -1,12 +1,12 @@
 import todoPost from '../models/todo_post.js';
+import midlewareSchema from '../midleware/schema.js'
 
 export const getTodos = async (req, res) => {
-  console.log(req.params.todoDate, "req.params.todoDate")
-  console.log(req.data_user._id, "req.data_user._id")
+  console.log(midlewareSchema.getTodo, 'reqqqqqqq')
   try {
     const todolist = await todoPost.find(
       {
-      date: req.params.todoDate,
+      date: req.params.date,
       User: req.data_user._id
     }
     );

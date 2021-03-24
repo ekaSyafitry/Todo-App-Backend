@@ -9,11 +9,9 @@ const privateKey = `${process.env.SECRETKEY}`
 export const postUser = async (req, res) => {
     console.log(req.body)
     //cek password Confirmation
-    if (req.body.password != req.body.confPassword) return res.badRequest({
-        message: "Password not match"
-    });
-
-
+    // if (req.body.password != req.body.confPassword) return res.badRequest({
+    //     message: "Password not match"
+    // });
     try {
         //cek email
         const getUserExist = await userModel.findOne({
